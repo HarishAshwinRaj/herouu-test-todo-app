@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost:27017/todos_db",{
 app.use("/", bodyparser.json());
 app.use("/api", route);
 
-app.use( express.static("public/index.html"));
+app.use('/', express.static(path.join(__dirname, "public")));
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
